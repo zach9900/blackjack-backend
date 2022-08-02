@@ -23,7 +23,7 @@ export class DeckService {
    }
 
    async getDeck():Promise<Card[]>{
-    return await this.cardModel.find();
+    return this.cardModel.find();
    }
 
    async getCard(id: string):Promise<Card>{
@@ -32,7 +32,7 @@ export class DeckService {
 
    async addCard(card: Card):Promise<Card>{
      const newCard = new this.cardModel(card);
-     return await newCard.save();
+     return newCard.save();
    }
 
    async deleteCard(id: string):Promise<Card>{
